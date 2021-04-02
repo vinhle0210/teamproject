@@ -1,0 +1,3 @@
+I created a new index.js which connect to my firebase app
+I modified login.html so when user hit sign in button in login.html, it linked with the login() function in index.html
+Also i modified signup.html so when user signed up, it created a new user in the firebase
