@@ -9,11 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Get to know me</title>
 
-     <!-- Fire base -->
-     <script src="https://www.gstatic.com/firebasejs/8.3.2/firebase-app.js"></script>
-     <script src="https://www.gstatic.com/firebasejs/8.3.2/firebase-auth.js"></script>
-     
-     <script src="https://www.gstatic.com/firebasejs/8.3.2/firebase-analytics.js"></script>
+   
 </head>
 <body>
     <nav class="navbar">
@@ -29,10 +25,11 @@
     </nav>
     <form class="form-horizontal">
         <p>Sign up</p>
-        <!-- <img src="" class="rounded-circle" alt=""> 
-        <div class="control-group">
+        <img src="" class="rounded-circle" alt="" id = "profileImage"> 
+        <!-- <div class="control-group">
             <label class="control-label pictureLabel" for="inputEmail">Add a picture </label><br>
-            <input type="file" id="myfile" name="myfile"><br><br>
+           
+            <input type="file" id="myfile" name="myfile" onchange="chooseFile(event)"><br><br>
         </div> -->
         <div class="control-group">
             <label class="control-label" for="inputName">Name</label>
@@ -67,6 +64,16 @@
                 </select>
             </div>
         </div>
+        <div class="control-group"> 
+            <label class="control-label" for="profilepic">Profile Picture </label>
+            <div class="controls">
+                <!-- Profile Box -->
+                <!-- <input type ="file" onchange="uploadfile(this.file)"> -->
+                <input type="file" id="myfile" name="myfile" onchange="chooseFile(event)"><br><br>
+               <!-- <hr>
+                 <img id="imgUpload" src="" width="100vw"> -->
+            </div>
+        </div>
         <div class="control-group">
             <label class="control-label tellme" for="inputText">Tell the people something about you!</label>
             <div class="controls">
@@ -89,6 +96,12 @@
         </div>
     </footer>
 
+      <!-- Fire base -->
+      <script src="https://www.gstatic.com/firebasejs/8.3.2/firebase-app.js"></script>
+      <script src="https://www.gstatic.com/firebasejs/8.3.2/firebase-auth.js"></script>
+      <script src="https://www.gstatic.com/firebasejs/8.3.2/firebase-storage.js"></script>
+      
+      <script src="https://www.gstatic.com/firebasejs/8.3.2/firebase-analytics.js"></script>
     <script src="scripts/index.js"></script>
 </body>
 </html>
