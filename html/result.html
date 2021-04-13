@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="styles/result.css">
+    <title>Get To Know Me</title>
+</head>
+<body id = 'backgroundColor'>
+    <nav class="navbar">
+        <!-- Brand/logo -->
+        <a class="navbar-brand" href="result.html">Get To Know Me</a>
+        
+        <!-- Links -->
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" onclick="signOut()" href="login.html">Logout</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="aboutLoggedIn.html">About</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="edit-profile.html" id='Edit Profile'>Edit</a>
+            </li>
+        </ul>
+    </nav>
+    <div class="content">
+        <img src="" alt="" id="user_profile_pic">
+        <p class="users-name" id="userName">User's Name</p>
+        
+        <div class="user-profile">
+            <!--<div class="network-content" style="display: none">-->
+            <div class="network-content">    
+                <a class="network-text" id="github" href="https://github.com/" target="_blank">Github</a>
+                <a class="network-text" id="twitter" href="https://twitter.com/" target="_blank">Twitter</a>
+                <a class="network-text" id="facebook" href="https://facebook.com/" target="_blank">Facebook</a>
+                <a class="network-text" id="instagram" href="https://instagram.com/" target="_blank">Instagram</a>
+            </div>
+            <div class="bio-content">
+                <p align="center" class="bioTxt" id="description_box">
+                Hello! Get to know me!
+            </p>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div class="mini-nav">
+            <ul>
+                <li><a style="float: left;" href="result.html">GTKM</a></li>
+                <li><a class="ft-right" href="aboutLoggedIn.html">About</a></li>
+                <li><a class="ft-right" onclick="signOut()" href="login.html">Logout</a></li>
+            </ul>
+        </div>
+    </footer>
+     <!-- Fire base -->
+     <script src="https://www.gstatic.com/firebasejs/8.3.2/firebase-app.js"></script>
+     <script src="https://www.gstatic.com/firebasejs/8.3.2/firebase-auth.js"></script>
+     <script src="https://www.gstatic.com/firebasejs/8.3.2/firebase-storage.js"></script>
+      <script src="https://www.gstatic.com/firebasejs/8.3.2/firebase-database.js"></script>
+   
+     <script src="https://www.gstatic.com/firebasejs/8.3.2/firebase-analytics.js"></script>
+   <script src="scripts/index.js"></script>
+   <script src="scripts/result.js"></script>
+</body>
+</html>
+

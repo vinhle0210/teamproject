@@ -1,0 +1,193 @@
+body {
+    padding: 0;
+    margin: 0;
+    font-family: 'Ubuntu', sans-serif;
+    /* min-height: 1800px; */
+}
+  
+.navbar {
+    position: absolute;
+    width: 100%;
+    background-color: rgb(26, 26, 26);
+    /* padding: 10px; */
+}
+  
+.navbar-brand {
+    position: relative;
+    color: white;
+    text-decoration: none;
+    top: 10px;
+    left: 20px;
+    font-size: 18px;
+}
+  
+.navbar-nav {
+    margin-top: -18px;
+    list-style-type: none;
+    z-index: -1;
+}
+  
+.nav-item {
+    padding: 10px;
+    top: 0;
+    display: inline-block;
+}
+  
+.nav-item {
+    position: relative;
+    float: right;
+    top: -10px;
+    right: 10px;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.nav-item .nav-link {
+    position: relative;
+    color: white;
+    text-decoration: none;
+    top: 8px;
+    margin: 10px;
+    padding: 5px;
+}
+
+.nav-item .nav-link:hover {
+    text-decoration: underline;
+}
+  
+.navbar-nav {
+    color: white;
+}
+
+img {
+    background-color: rgb(26, 26, 26);
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    border: none;
+    justify-content: center;
+    margin-top: -410px;
+}
+
+.content {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-content: flex-end;
+    top: 550px;
+}
+
+.content .users-name {
+    margin-top: -280px;
+    font-size: 36px;
+    color: rgba(26, 26, 26, 0.349);
+}
+
+.user-profile {
+    position: absolute;
+    justify-content: center;
+    margin-top: -40px;
+    width: 1250px;
+    height: 250px;
+}
+.network-content {
+    margin-top: -70px;
+}
+
+.network-text {
+    position: relative;
+    justify-content: center;
+    text-decoration: none;
+    left: 27%;
+    background-color: rgba(66, 161, 255, 0.534);
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    display: inline-block;
+    padding: 10px 25px;
+    border-radius: 9px;
+    margin: 10px 7px;
+    border: none;
+}
+
+.bio-content {
+    position: relative;
+    height: 400px;
+    width: auto;
+    display: flex;
+    justify-content: center;
+}
+
+.bioTxt {
+    position: absolute;
+    display: flex;
+    width: auto;
+    height: auto;
+    overflow: auto;
+    padding: 15px 30px;
+    margin-top: -70px;
+    border-radius: 5px;
+    font-size: 30px;
+    color: rgba(26, 26, 26, 0.349);
+}
+
+p {
+    position: absolute;
+    justify-content: center; 
+    font-size: 50px;
+    color: dodgerblue;
+    top: 100px;
+}
+
+
+hr {
+    position: absolute;
+    height: 5px;
+    background-color: rgba(30, 143, 255, 0.712);
+    border: none;
+    border-radius: 4px;
+    width: 80%;
+    left: 10%;
+    top: -80px;
+}
+
+button {
+    position: absolute;
+    justify-content: center;
+}
+
+/* footer */
+footer {
+    position: fixed;
+    flex-direction: column;
+    text-align: center;
+    width: 100%;
+    bottom: -17px;
+    left: 0;
+}
+  
+footer ul{
+    list-style-type: none;
+    display: flex;
+    align-items: flex-end;
+    background-color: rgb(26, 26, 26);
+    padding: 10px;
+}
+  
+footer ul li {
+    margin:  5px 10px;
+    float: right;
+}
+
+li .ft-right {
+    float: right;
+}
+
+.mini-nav ul li a {
+    text-decoration: none;
+    color: white;
+}
+
+
+
+  
