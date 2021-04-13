@@ -2,14 +2,14 @@ body {
     padding: 0;
     margin: 0;
     font-family: 'Ubuntu', sans-serif;
-    min-height: 1800px;
+    /* min-height: 1800px; */
 }
 
 .navbar {
     position: absolute;
     width: 100%;
     height: 40px;
-    padding: 10px;
+    /* padding: 10px; */
     background-color: rgb(26, 26, 26);
 }
 
@@ -53,9 +53,12 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    top: 200px;
+    top: 75px;
 }
+h1{
+    font-family: Arial, Helvetica, sans-serif;
 
+}
 p {
     position: relative;
     justify-content: center; 
@@ -86,7 +89,7 @@ li .ft-right {
 .backgroud-txt {
     position: relative;
     display: flex;
-    height: 400px;
+    height: 500px;
     overflow: auto;
     width: 55%;
     background-color: rgba(66, 161, 255, 0.931);

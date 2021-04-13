@@ -2,7 +2,7 @@ body {
     padding: 0;
     margin: 0;
     font-family: 'Ubuntu', sans-serif;
-    min-height: 1600px;
+    /* min-height: 1600px; */
     height: 100%;
 }
 .navbar {
@@ -55,7 +55,7 @@ p {
     justify-content: center; 
     font-size: 50px;
     color: rgb(26, 26, 26);
-    top: 100px;
+    top: 50px;
 }
   
 .sub-heading {
@@ -100,7 +100,7 @@ li .ft-right {
     flex-direction: column;
     align-items: center;
     width: 684px;
-    height: 1150px;
+    height: 800px;
     background-color: #F3EDED;
     left: 34%;
     margin-top: 3%;

@@ -13,16 +13,11 @@ firebase.analytics();
 
 // Create account function-----------------------------
 function writeUserData(userId, name, user_email, user_description) {
-  try{
     firebase.database().ref('users/' + userId).set({
       username: name,
       email: user_email,
       description: user_description
     });
-  }
-  catch(error){
-    window.alert(error.message);
-  }
 }
 // store image function that store the user imgages
 function storeUserImage(userId, pictureFile){
@@ -32,24 +27,25 @@ function storeUserImage(userId, pictureFile){
     })
     .catch(function(error) { window.alert(error.message); });
 }
-function createAccount(){
-    var name = document.getElementById("inputName").value;
-    var description = document.getElementById("inputDescription").value;
-    var email = document.getElementById("inputEmail").value;
-    var password = document.getElementById("inputPassword").value;
-    var file = document.getElementById('myfile').files[0];
+// function createAccount(){
+//     var name = document.getElementById("inputName").value;
+//     var description = document.getElementById("inputDescription").value;
+//     var email = document.getElementById("inputEmail").value;
+//     var password = document.getElementById("inputPassword").value;
+//     var file = document.getElementById('myfile').files[0];
 
-    firebase.auth().createUserWithEmailAndPassword(email, password)
-      .then(function(userCredential){
-        var user = userCredential.user;
-        storeUserImage(user.uid, file);
-        writeUserData(user.uid, name, email, description);
-        window.alert('Create sucessfull');
-      })
-      .catch(function(error){
-         window.alert(error.message);
-      });
-}
+//     console.log('name is ' + name);
+//     // firebase.auth().createUserWithEmailAndPassword(email, password)
+//     //   .then(function(userCredential){
+//     //     var user = userCredential.user;
+//     //     storeUserImage(user.uid, file);
+//     //     writeUserData(user.uid, name, email, description);
+//     //     window.alert('Create sucessfull');
+//     //   })
+//     //   .catch(function(error){
+//     //      window.alert(error.message);
+//     //   });
+// }
 
 // Delete data
 function delete_user_data(){
@@ -73,6 +69,7 @@ function delete_user_data(){
 // Login function------------------------------------------------
 function login(){
   'use strict';
+  event.preventDefault();
   var userEmail = document.getElementById("inputEmail").value;
   var userPassword = document.getElementById("inputPassword").value;
 
@@ -90,7 +87,6 @@ function login(){
 function signOut(){
   firebase.auth().signOut().then(function() {
     // Sign-out successful.
-    // Once the user sign out, we will redirect them back to login page, which is login.html
     window.location.href = 'login.html';
   }).catch(function(error){
     // An error happened.
@@ -114,24 +110,24 @@ function Authentication_checking(){
   });
 }
 
-// Update social media----------------------------------------------
-// I merged these function together
-function updateSocialMedia(userId, name, bio, github_link, twitter_link, facebook_link, instagram_link){
-  firebase.database().ref('users/' + userId).update({
-    username: name,
-    description: bio,
-    github: github_link,
-    twitter: twitter_link,
-    facebook: facebook_link,
-    instagram: instagram_link
-  });
-}
-// Update user pic missed a parameter, i fixed it
-function updateUserPic(userId, picturefile){
-  firebase.storage().ref('users/' + userId + '/profile.jpg').put(file).then(function(){
-    console.log("sucessfully uploaded piture");
-  });
-}
+// // Update social media----------------------------------------------
+// // I merged these function together
+// function updateUserProfile(userId, name, bio, github_link, twitter_link, facebook_link, instagram_link){
+//   firebase.database().ref('users/' + userId).update({
+//     username: name,
+//     description: bio,
+//     github: github_link,
+//     twitter: twitter_link,
+//     facebook: facebook_link,
+//     instagram: instagram_link
+//   });
+// }
+// // Update user pic missed a parameter, i fixed it
+// function updateUserPic(userId, picturefile){
+//   firebase.storage().ref('users/' + userId + '/profile.jpg').put(file).then(function(){
+//     console.log("sucessfully uploaded piture");
+//   });
+// }
 
 function updateProfile(){
   var github = document.getElementById('github').value;
