@@ -1,0 +1,4 @@
+I edit most of js file to handle validation form.
+I merged Marco's edit-background.js file to mine edit-profile.js file
+I hide social network button if the user didn't enter their social media in
+i commented out the name, description and images in sign-up.html so user only need to enter their email and password to create an account, then it go edit-profile.html
