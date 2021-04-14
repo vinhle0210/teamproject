@@ -85,7 +85,9 @@ li .ft-right {
     padding: 5px 10px;
     margin-left: -10px;
 }
-
+#user_profile_pic{
+    background-color: white;
+}
 input {
     border: 1px solid rgba(66, 161, 255, 0.931);
     padding: 10px;
@@ -137,7 +139,22 @@ input {
 .control-group .tellme {
     margin-left: 50px;
 }
+.colorGroup {
+    display: flex;
+    justify-content: center;
+    margin-left: -80px;
+    margin-top: 20px;
+    width: 100%;
+}
 
+.colorGroup label {
+    color: black;
+    margin-right: 10px;
+}
+
+.colorGroup .colorPicker {
+    width: 20%;
+}
 textarea {
     border: 1px solid rgba(66, 161, 255, 0.931);
     outline: none;

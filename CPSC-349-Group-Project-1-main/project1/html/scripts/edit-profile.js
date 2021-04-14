@@ -19,11 +19,73 @@ function updateUserPic(userId, picturefile){
         window.alert('Sucesfully Save changes');
     });
 }
+function change_profile_image(){
+  file = document.getElementById('picture-file').files[0];
+  user_profile_pic = document.getElementById('user_profile_pic');
+  user_profile_pic.src = URL.createObjectURL(file);
+  user_profile_pic.onload = function() {
+    URL.revokeObjectURL(user_profile_pic.src) // free memory
+  }
+}
 
+// Tests to see if /users/<userId> has any data. 
+function checkIfUserExists(userId) {
+  var usersRef = firebase.database().ref('users/');
+  usersRef.child(userId).once('value', function(snapshot) {
+    var exists = (snapshot.val() !== null);
+    userExistsCallback(userId, exists);
+  });
+}
+function userExistsCallback(userId, exists) {
+  if (exists) {
+    console.log('User exist');
+    // Name, bio
+    var firebase_username = firebase.database().ref('users/' + userId + '/username');
+    var firebase_description = firebase.database().ref('users/' + userId + '/description');
+    // social network links
+    var firebase_facebook = firebase.database().ref('users/' + userId + '/facebook');
+    var firebase_github = firebase.database().ref('users/' + userId + '/github');
+    var firebase_instagram = firebase.database().ref('users/' + userId + '/instagram');
+    var firebase_twitter = firebase.database().ref('users/' + userId + '/twitter');
+
+    // Change name, description, images if user logged in before
+    firebase_username.on('value', function (snapshot) {
+      document.getElementById("inputName").value = snapshot.val();
+    });
+    firebase_description.on('value', function (snapshot) {
+      document.getElementById("inputDescription").innerHTML = snapshot.val();
+    });
+    firebase.storage().ref('users/' + userId + '/profile.jpg').getDownloadURL()
+        .then(function (url) {
+          var img = document.getElementById('user_profile_pic');
+          img.setAttribute('src', url);
+        })
+        .catch(function (error) {
+          console.log(error);
+    });
+    // Change social media links
+    firebase_facebook.on('value', function (snapshot) {
+      document.getElementById('facebook').value = snapshot.val();
+   });
+   firebase_github.on('value', function (snapshot) {
+      document.getElementById('github').value = snapshot.val();
+   });
+   firebase_twitter.on('value', function (snapshot) {
+      document.getElementById('twitter').value = snapshot.val();
+   });
+   firebase_instagram.on('value', function (snapshot) {
+      document.getElementById('instagram').value = snapshot.val();
+   });
+
+  } else {
+    console.log('New user');
+  }
+}
 
 firebase.auth().onAuthStateChanged(function(user){
     if(user){
         console.log('Currently logged in as ' + user.email);
+        checkIfUserExists(user.uid);
         var colorBg = document.querySelector(".colorPicker");
         var body = document.getElementById("backgroundColor");
 
@@ -68,4 +130,10 @@ firebase.auth().onAuthStateChanged(function(user){
         console.log('No user is currently signed in.');
     }
 });
+
+function go() {
+  var userId = prompt('Username?', 'Guest');
+  checkIfUserExists(userId);
+}
+
 
